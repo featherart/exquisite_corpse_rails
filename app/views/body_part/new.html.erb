@@ -1,0 +1,9 @@
+<canvas id="drawing" width="500" height="200"></canvas>
+
+<%= form_for @body_part do |f| %>
+  <%= f.hidden_field :image %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+<button id="clear">Clear</button>
