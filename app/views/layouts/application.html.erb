@@ -6,9 +6,17 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= controller_name %> <%= action_name %>">
+<!--<body class="<%= controller_name %> <%= action_name %>">-->
+<body>
+	<div class="row">
+		<div class="span4 <%= controller_name %> <%= action_name %>"></div>
+		<div class="span4" id="drawings_target"></div>
+	</div>
+
+
 
 <%= yield %>
+
 
 </body>
 </html>

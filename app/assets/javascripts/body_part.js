@@ -36,8 +36,19 @@ $(function() {
   });
 
   $form.submit(function(e) {
-    var url = $canvas[0].toDataURL('image/png');
-    console.log("here's url: " + url);
+    e.preventDefault();
+
+    var url = $canvas[0].toDataURL('image/png'),
+        img = document.createElement('img'),
+        drawings_target = $('#drawings_target');
+
+    img.src = url;
+    //console.log("here's url: " + url);
+    // todo: write a function that returns an object that returns an object (a closure)
+    // call the function in here - latch object (this)
+    // maybe use AJAX to get a prototype up rather than save to a DB
+    drawings_target.append(img);
+
     $hidden.val(url);
   });
 

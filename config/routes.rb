@@ -2,6 +2,7 @@ ExquisiteCorpse::Application.routes.draw do
   get "body_part/new"
 
   post "body_part" => "body_part#save", :as => :body_parts
+  #post "body_part" => "body_part", :as => :body_parts
 
   get "body_part/display"
 
