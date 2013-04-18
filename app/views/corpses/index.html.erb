@@ -1,0 +1,27 @@
+<h1>Listing corpses</h1>
+
+<table>
+  <tr>
+    <th>Head</th>
+    <th>Torso</th>
+    <th>Legs</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @corpses.each do |corpse| %>
+  <tr>
+    <td><img src="<%= corpse.head.image %>"></td>
+    <td><img src="<%= corpse.torso.image %>"></td>
+    <td><img src="<%= corpse.legs.image %>"></td>
+    <td><%= link_to 'Show', corpse %></td>
+    <td><%= link_to 'Edit', edit_corpse_path(corpse) %></td>
+    <td><%= link_to 'Destroy', corpse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Corpse', new_corpse_path %>

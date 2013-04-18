@@ -1,10 +1,9 @@
 ExquisiteCorpse::Application.routes.draw do
-  get "body_part/new"
+  resources :corpses
 
-  post "body_part" => "body_part#save", :as => :body_parts
-  #post "body_part" => "body_part", :as => :body_parts
 
-  get "body_part/display"
+  root to: "body_parts#index"
+  resources :body_parts
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Head:</b>
+  <%= @corpse.head %>
+</p>
+
+<p>
+  <b>Torso:</b>
+  <%= @corpse.torso %>
+</p>
+
+<p>
+  <b>Legs:</b>
+  <%= @corpse.legs %>
+</p>
+
+
+<%= link_to 'Edit', edit_corpse_path(@corpse) %> |
+<%= link_to 'Back', corpses_path %>

@@ -11,11 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130321025728) do
+ActiveRecord::Schema.define(:version => 20130418035415) do
 
   create_table "body_parts", :force => true do |t|
+    t.integer  "corpse_id"
     t.string   "name"
     t.string   "image"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "body_parts", ["corpse_id", "name"], :name => "index_body_parts_on_corpse_id_and_name", :unique => true
+
+  create_table "corpses", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

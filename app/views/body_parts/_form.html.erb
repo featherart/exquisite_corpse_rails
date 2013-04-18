@@ -1,0 +1,22 @@
+<canvas id="drawing" width="500" height="200"></canvas>
+
+<%= form_for(@body_part) do |f| %>
+  <%= f.hidden_field :image %>
+
+  <% if @body_part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@body_part.errors.count, "error") %> prohibited this body_part from being saved:</h2>
+
+      <ul>
+      <% @body_part.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<button id="clear">Clear</button>
